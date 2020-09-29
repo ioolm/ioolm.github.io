@@ -1,0 +1,391 @@
+
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+  <meta name="theme-color" content="#42dbbc" />
+  <meta name="msapplication-navbutton-color" content="#f8f5ec" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec" />
+
+  
+  
+  
+  <link rel="shortcut icon" type="image/x-icon"
+    href="https://img.hxjbcdn.com/a9a8d554-16bf-4843-89dd-f513adc27b28.ico" />
+  
+
+  <!-- <title>ioolm</title> -->
+  <title>艾窝窝 | 爱生活</title>
+
+
+  
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+  
+
+  <link rel="stylesheet"
+    href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+
+  <script>
+    window.config = ;
+  </script>
+  <!--代码放置于</body>上方-->
+
+  <script>
+
+    !function () {
+
+      function n(n, e, t) {
+
+        return n.getAttribute(e) || t
+
+      }
+
+      function e(n) {
+
+        return document.getElementsByTagName(n)
+
+      }
+
+      function t() {
+
+        var t = e("script"), o = t.length, i = t[o - 1];
+
+        return {
+
+          l: o, z: n(i, "zIndex", -1), o: n(i, "opacity", .5), c: n(i, "color", "0,0,0"), n: n(i, "count", 99)
+
+        }
+
+      }
+
+      function o() {
+
+        a = m.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
+
+          c = m.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
+
+      }
+
+      function i() {
+
+        r.clearRect(0, 0, a, c);
+
+        var n, e, t, o, m, l;
+
+        s.forEach(function (i, x) {
+
+          for (i.x += i.xa, i.y += i.ya, i.xa *= i.x > a || i.x < 0 ? -1 : 1, i.ya *= i.y > c || i.y < 0 ? -1 : 1, r.fillRect(i.x - .5, i.y - .5, 1, 1), e = x + 1; e < u.length; e++)n = u[e],
+
+            null !== n.x && null !== n.y && (o = i.x - n.x, m = i.y - n.y,
+
+              l = o * o + m * m, l < n.max && (n === y && l >= n.max / 2 && (i.x -= .03 * o, i.y -= .03 * m),
+
+                t = (n.max - l) / n.max, r.beginPath(), r.lineWidth = t / 2, r.strokeStyle = "rgba(" + d.c + "," + (t + .2) + ")", r.moveTo(i.x, i.y), r.lineTo(n.x, n.y), r.stroke()))
+
+        }),
+
+          x(i)
+
+      }
+
+      var a, c, u, m = document.createElement("canvas"),
+
+        d = t(), l = "c_n" + d.l, r = m.getContext("2d"),
+
+        x = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
+
+          function (n) {
+
+            window.setTimeout(n, 1e3 / 45)
+
+          },
+
+        w = Math.random, y = { x: null, y: null, max: 2e4 }; m.id = l, m.style.cssText = "position:fixed;top:0;left:0;z-index:" + d.z + ";opacity:" + d.o, e("body")[0].appendChild(m), o(), window.onresize = o,
+
+          window.onmousemove = function (n) {
+
+            n = n || window.event, y.x = n.clientX, y.y = n.clientY
+
+          },
+
+          window.onmouseout = function () {
+
+            y.x = null, y.y = null
+
+          };
+
+      for (var s = [], f = 0; d.n > f; f++) {
+
+        var h = w() * a, g = w() * c, v = 2 * w() - 1, p = 2 * w() - 1; s.push({ x: h, y: g, xa: v, ya: p, max: 6e3 })
+
+      }
+
+      u = s.concat([y]),
+
+        setTimeout(function () { i() }, 100)
+
+    }();
+
+  </script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+  
+
+<header class="blog-slide" style="height: px">
+  <nav class="blog-header">
+    <a class="mobile toggle-button"><i class="fas fa-bars fa-lg"></i></a>
+    <ul>
+      <li class="title"><a href="/">Mlog</a></li>
+      
+      <li class="nav-item"><a href="/">home</a></li>
+      
+      <li class="nav-item"><a href="/archives">all</a></li>
+      
+      <li class="nav-item"><a href="mailto:ioolm@vip.qq.com">link</a></li>
+      
+      <li class="nav-item"><a href="https://ioolm.com">about me</a></li>
+      
+    </ul>
+  </nav>
+  <h1 class="subtitle"><span id='jinrishici-sentence'></span></h1>
+</header>
+  <nav id="menu">
+  
+  <a href="/">home</a>
+  
+  <a href="/archives">all</a>
+  
+  <a href="mailto:ioolm@vip.qq.com">link</a>
+  
+  <a href="https://ioolm.com">about me</a>
+  
+</nav>
+
+  <main class="blog-main" style="margin-top: -150px">
+    <article class="blog-post">
+  
+
+  <div class="post-content">
+    <div class="post-header">
+      
+      
+  
+    <h1 class="post-title">
+      <a href="/2019/08/26/git命令/">
+        git命令
+      </a>
+    </h1>
+  
+
+<div class="post-meta">
+  2019-08-26
+  
+  
+</div>
+
+      
+    </div>
+    <div class="post-detail">
+      
+        
+        <h4 id="代码版本管理"   >
+          <a href="#代码版本管理" class="heading-link"><i class="fas fa-link"></i></a>代码版本管理</h4>
+      <ul>
+<li>
+        <h5 id="svn"   >
+          <a href="#svn" class="heading-link"><i class="fas fa-link"></i></a>svn</h5>
+      <p>集中式代码版本管理工具，它有一个中心库。我们在修改之前需要先进行代码迁出，改完之后在迁出</p>
+</li>
+<li>
+        <h5 id="git"   >
+          <a href="#git" class="heading-link"><i class="fas fa-link"></i></a>git</h5>
+      <p>分布式代码版本管理工具。任何一个人的代码仓库都可以作为一个中心库再分享给别人。</p>
+<p>本地分三块内容</p>
+<ul>
+<li><p>工作区</p>
+<p>我们平时写代码改代码的地方</p>
+</li>
+<li><p>缓存区</p>
+<p>git add 就会把修改的代码加入缓存区</p>
+</li>
+<li><p>本地仓库</p>
+<p>git commit 就会把代码提交到本地仓库</p>
+</li>
+</ul>
+<p>还有一个远程仓库</p>
+<p>​    git push 把本地代码推送到远程</p>
+<p>​    git pull 拉取远程仓库代码到本地，git fetch+git merge</p>
+<p>​    git fetch 只拉取，不合并</p>
+</li>
+</ul>
+
+        <h4 id="git常用命令"   >
+          <a href="#git常用命令" class="heading-link"><i class="fas fa-link"></i></a>git常用命令</h4>
+      
+        <h6 id="初始化一个仓库"   >
+          <a href="#初始化一个仓库" class="heading-link"><i class="fas fa-link"></i></a>初始化一个仓库</h6>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></div></figure>
+
+
+        <h6 id="or-克隆"   >
+          <a href="#or-克隆" class="heading-link"><i class="fas fa-link"></i></a>or  克隆</h6>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> 远程仓库地址</span><br></pre></td></tr></table></div></figure>
+
+
+        <h6 id="加入缓存区"   >
+          <a href="#加入缓存区" class="heading-link"><i class="fas fa-link"></i></a>加入缓存区</h6>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></div></figure>
+
+
+        <h6 id="提交缓存区的代码到本地仓库"   >
+          <a href="#提交缓存区的代码到本地仓库" class="heading-link"><i class="fas fa-link"></i></a>提交缓存区的代码到本地仓库</h6>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m <span class="string">&#x27;日志&#x27;</span></span><br></pre></td></tr></table></div></figure>
+
+
+        <h6 id="拉取远程最新代码"   >
+          <a href="#拉取远程最新代码" class="heading-link"><i class="fas fa-link"></i></a>拉取远程最新代码</h6>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git pull</span><br><span class="line"><span class="comment"># 全名：</span></span><br><span class="line"><span class="comment"># git pull origin master:master</span></span><br><span class="line"><span class="comment"># git pull 远程仓库的名字 远程仓库的分支名:本地仓库的分支名</span></span><br></pre></td></tr></table></div></figure>
+
+
+        <h6 id="推送本地代码到远程"   >
+          <a href="#推送本地代码到远程" class="heading-link"><i class="fas fa-link"></i></a>推送本地代码到远程</h6>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git push</span><br><span class="line"><span class="comment"># 全名：</span></span><br><span class="line"><span class="comment"># git push origin master:master</span></span><br><span class="line"><span class="comment"># git push 远程仓库的名字 本地分支名字:远程分支名字</span></span><br></pre></td></tr></table></div></figure>
+
+
+        <h6 id="更多命令"   >
+          <a href="#更多命令" class="heading-link"><i class="fas fa-link"></i></a>更多命令</h6>
+      <figure class="highlight plain"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b 分支名 # 创建一个新的分支并且切换过去</span><br></pre></td></tr></table></div></figure>
+
+<figure class="highlight plain"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch # 列出当前的所有分支</span><br></pre></td></tr></table></div></figure>
+
+<figure class="highlight plain"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch # 查看分支</span><br></pre></td></tr></table></div></figure>
+
+<figure class="highlight plain"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d 分支名 # 删除指定的分支</span><br></pre></td></tr></table></div></figure>
+
+<figure class="highlight plain"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge 分支名 # 合并分支，合并指定分支名的分支到当前分支</span><br></pre></td></tr></table></div></figure>
+
+<figure class="highlight plain"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log # 查看本地日志</span><br></pre></td></tr></table></div></figure>
+
+<figure class="highlight plain"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reflog # 查看所有的日志，包含已经回退和删除的</span><br></pre></td></tr></table></div></figure>
+
+<figure class="highlight plain"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset logid --hard # 回退代码到指定的位置</span><br></pre></td></tr></table></div></figure>
+
+<figure class="highlight plain"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rebase # 变基</span><br></pre></td></tr></table></div></figure>
+
+
+
+
+
+        <h4 id="生成秘钥"   >
+          <a href="#生成秘钥" class="heading-link"><i class="fas fa-link"></i></a>生成秘钥</h4>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen</span><br></pre></td></tr></table></div></figure>
+
+
+        <hr>
+      
+    </div>
+
+    
+    
+    
+
+    
+    
+  
+
+    <div class="post-more">
+  
+    <div class="post-pre">
+      <span>previous</span>
+      <a href="/2019/09/20/%E9%A1%B5%E9%9D%A2%E7%BA%BF%E6%9D%A1%E8%BF%BD%E9%9A%8F%E9%BC%A0%E6%A0%87%E6%8C%87%E9%92%88/">页面线条追随鼠标指针</a>
+    </div>
+  
+  
+</div>
+    
+    
+  </div>
+</article>
+  </main>
+
+  <div class="back-to-top" id="back-to-top"><i class="fas fa-arrow-alt-circle-up fa-2x"></i></div>
+
+  <footer class="blog-footer">
+  
+
+
+<hr>
+<div class="blog-footer-friends">
+  <p class="title">See Me</p>
+  <div class="friends">
+    
+    <a href="https://ioolm.com" target="_blank">ioolm</a>
+    
+  </div>
+</div>
+
+  
+
+
+<div class="blog-footer-social">
+  <ul>
+    
+    
+    <li><a class="iconfont icon-email" href="mailto:ioolm@vip.qq.com "></a></li>
+    <!-- 
+    
+    
+    <li><a class="iconfont icon-instagram" href="dasd"></a></li>
+    
+    
+    
+    <li><a class="iconfont icon-douban" href="das"></a></li>
+    
+    
+    
+    <li><a class="iconfont icon-linkedin" href="dsa"></a></li>
+    
+    
+    
+    
+    <li><a class="iconfont icon-rss" href="/atom.xml"></a></li>
+     -->
+  </ul>
+</div>
+
+  <div class="blog-footer-copyright">
+  <p class="copyright">Copyright © 2020 ioolm. Powered by <a href="https:ioolm.com">MingLiu</a>&nbsp;&nbsp;&nbsp;<iframe
+      src="https://ghbtns.com/github-btn.html?user=ioolm&repo=ioolm.github.io&type=star&count=false&size=small"
+      frameborder="0" scrolling="0" width="58px" height="30px" style="margin-bottom: -15px"></iframe></p>
+</div>
+</footer>
+
+<script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+
+
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<!--  -->
+
+
+
+
+<script type="text/javascript" src="/js/cicada.js"></script>
+</body>
+
+</html>

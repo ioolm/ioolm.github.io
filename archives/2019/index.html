@@ -1,0 +1,277 @@
+
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+  <meta name="theme-color" content="#42dbbc" />
+  <meta name="msapplication-navbutton-color" content="#f8f5ec" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec" />
+
+  
+  
+  
+  <link rel="shortcut icon" type="image/x-icon"
+    href="https://img.hxjbcdn.com/a9a8d554-16bf-4843-89dd-f513adc27b28.ico" />
+  
+
+  <!-- <title>ioolm</title> -->
+  <title>艾窝窝 | 爱生活</title>
+
+
+  
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+  
+
+  <link rel="stylesheet"
+    href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+
+  <script>
+    window.config = ;
+  </script>
+  <!--代码放置于</body>上方-->
+
+  <script>
+
+    !function () {
+
+      function n(n, e, t) {
+
+        return n.getAttribute(e) || t
+
+      }
+
+      function e(n) {
+
+        return document.getElementsByTagName(n)
+
+      }
+
+      function t() {
+
+        var t = e("script"), o = t.length, i = t[o - 1];
+
+        return {
+
+          l: o, z: n(i, "zIndex", -1), o: n(i, "opacity", .5), c: n(i, "color", "0,0,0"), n: n(i, "count", 99)
+
+        }
+
+      }
+
+      function o() {
+
+        a = m.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
+
+          c = m.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
+
+      }
+
+      function i() {
+
+        r.clearRect(0, 0, a, c);
+
+        var n, e, t, o, m, l;
+
+        s.forEach(function (i, x) {
+
+          for (i.x += i.xa, i.y += i.ya, i.xa *= i.x > a || i.x < 0 ? -1 : 1, i.ya *= i.y > c || i.y < 0 ? -1 : 1, r.fillRect(i.x - .5, i.y - .5, 1, 1), e = x + 1; e < u.length; e++)n = u[e],
+
+            null !== n.x && null !== n.y && (o = i.x - n.x, m = i.y - n.y,
+
+              l = o * o + m * m, l < n.max && (n === y && l >= n.max / 2 && (i.x -= .03 * o, i.y -= .03 * m),
+
+                t = (n.max - l) / n.max, r.beginPath(), r.lineWidth = t / 2, r.strokeStyle = "rgba(" + d.c + "," + (t + .2) + ")", r.moveTo(i.x, i.y), r.lineTo(n.x, n.y), r.stroke()))
+
+        }),
+
+          x(i)
+
+      }
+
+      var a, c, u, m = document.createElement("canvas"),
+
+        d = t(), l = "c_n" + d.l, r = m.getContext("2d"),
+
+        x = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
+
+          function (n) {
+
+            window.setTimeout(n, 1e3 / 45)
+
+          },
+
+        w = Math.random, y = { x: null, y: null, max: 2e4 }; m.id = l, m.style.cssText = "position:fixed;top:0;left:0;z-index:" + d.z + ";opacity:" + d.o, e("body")[0].appendChild(m), o(), window.onresize = o,
+
+          window.onmousemove = function (n) {
+
+            n = n || window.event, y.x = n.clientX, y.y = n.clientY
+
+          },
+
+          window.onmouseout = function () {
+
+            y.x = null, y.y = null
+
+          };
+
+      for (var s = [], f = 0; d.n > f; f++) {
+
+        var h = w() * a, g = w() * c, v = 2 * w() - 1, p = 2 * w() - 1; s.push({ x: h, y: g, xa: v, ya: p, max: 6e3 })
+
+      }
+
+      u = s.concat([y]),
+
+        setTimeout(function () { i() }, 100)
+
+    }();
+
+  </script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+  
+
+<header class="blog-slide" style="height: 230px">
+  <nav class="blog-header">
+    <a class="mobile toggle-button"><i class="fas fa-bars fa-lg"></i></a>
+    <ul>
+      <li class="title"><a href="/">Mlog</a></li>
+      
+      <li class="nav-item"><a href="/">home</a></li>
+      
+      <li class="nav-item"><a href="/archives">all</a></li>
+      
+      <li class="nav-item"><a href="mailto:ioolm@vip.qq.com">link</a></li>
+      
+      <li class="nav-item"><a href="https://ioolm.com">about me</a></li>
+      
+    </ul>
+  </nav>
+  <h1 class="subtitle"><span id='jinrishici-sentence'>Archives</span></h1>
+</header>
+  <nav id="menu">
+  
+  <a href="/">home</a>
+  
+  <a href="/archives">all</a>
+  
+  <a href="mailto:ioolm@vip.qq.com">link</a>
+  
+  <a href="https://ioolm.com">about me</a>
+  
+</nav>
+
+  <main class="blog-main" style="margin-top: 50px">
+    <section class="blog-archive">
+  
+  
+    <div class="archive-year">
+      <h2 class="archive-title"><i class="fas fa-archive"></i>2019</h2>
+      <div class="articles">
+      
+        <div class="articles-content">
+            <time class="is-text-small" datetime="2019-11-08T17:55:45.000Z" itemprop="datePublished">11-09</time>
+            <a href="/2019/11/09/%E6%B7%B1%E5%A4%9C%E4%B8%A4%E7%82%B9%E5%8D%8A/">深夜两点半</a>
+        </div>
+        <hr>
+      
+        <div class="articles-content">
+            <time class="is-text-small" datetime="2019-09-20T01:47:08.000Z" itemprop="datePublished">09-20</time>
+            <a href="/2019/09/20/%E9%A1%B5%E9%9D%A2%E7%BA%BF%E6%9D%A1%E8%BF%BD%E9%9A%8F%E9%BC%A0%E6%A0%87%E6%8C%87%E9%92%88/">页面线条追随鼠标指针</a>
+        </div>
+        <hr>
+      
+        <div class="articles-content">
+            <time class="is-text-small" datetime="2019-08-26T07:18:34.000Z" itemprop="datePublished">08-26</time>
+            <a href="/2019/08/26/git%E5%91%BD%E4%BB%A4/">git命令</a>
+        </div>
+        <hr>
+      
+      </div>
+    </div>
+  
+  
+</section>
+  </main>
+
+  <div class="back-to-top" id="back-to-top"><i class="fas fa-arrow-alt-circle-up fa-2x"></i></div>
+
+  <footer class="blog-footer">
+  
+
+
+<hr>
+<div class="blog-footer-friends">
+  <p class="title">See Me</p>
+  <div class="friends">
+    
+    <a href="https://ioolm.com" target="_blank">ioolm</a>
+    
+  </div>
+</div>
+
+  
+
+
+<div class="blog-footer-social">
+  <ul>
+    
+    
+    <li><a class="iconfont icon-email" href="mailto:ioolm@vip.qq.com "></a></li>
+    <!-- 
+    
+    
+    <li><a class="iconfont icon-instagram" href="dasd"></a></li>
+    
+    
+    
+    <li><a class="iconfont icon-douban" href="das"></a></li>
+    
+    
+    
+    <li><a class="iconfont icon-linkedin" href="dsa"></a></li>
+    
+    
+    
+    
+    <li><a class="iconfont icon-rss" href="/atom.xml"></a></li>
+     -->
+  </ul>
+</div>
+
+  <div class="blog-footer-copyright">
+  <p class="copyright">Copyright © 2020 ioolm. Powered by <a href="https:ioolm.com">MingLiu</a>&nbsp;&nbsp;&nbsp;<iframe
+      src="https://ghbtns.com/github-btn.html?user=ioolm&repo=ioolm.github.io&type=star&count=false&size=small"
+      frameborder="0" scrolling="0" width="58px" height="30px" style="margin-bottom: -15px"></iframe></p>
+</div>
+</footer>
+
+<script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+
+
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<!--  -->
+
+
+
+
+<script type="text/javascript" src="/js/cicada.js"></script>
+</body>
+
+</html>
