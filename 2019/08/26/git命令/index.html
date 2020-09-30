@@ -1,0 +1,514 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="ioolm" href="https://ioolm.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="ioolm" href="https://ioolm.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="ioolm" href="https://ioolm.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.1.9">
+
+  
+  <meta name="keywords" content="git" />
+
+
+
+<meta name="description" content="艾窝窝爱生活" >
+
+
+<link rel="canonical" href="https://ioolm.github.io/2019/08/26/git%E5%91%BD%E4%BB%A4/">
+
+
+
+  <title>
+git命令 - HTML |
+Mlog = ioolm</title>
+<meta name="generator" content="Hexo 5.2.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">git命令
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2019-08-26 15:18:34">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2019-08-26T15:18:34+08:00">2019-08-26</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Mlog</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/c62bd99cly1gj8e5xdlkmj21hc0u0q9n.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/c62bd99cly1gj7veacjwxj21hc0u0dpf.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/c62bd99cly1gj8e6grorwj21hc0u01dk.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/c62bd99cly1gj8e8lh9euj21hc0u0k5b.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/c62bd99cly1gj8e7igqf6j21hc0u0do2.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/c62bd99cly1gj8e63vjjmj21hc0u0hdp.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main id="main">
+      <div class="inner">
+        <div id="content" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/HTML/" itemprop="item" rel="index" title="分类于 HTML"><span itemprop="name">HTML</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="en">
+  <link itemprop="mainEntityOfPage" href="https://ioolm.github.io/2019/08/26/git%E5%91%BD%E4%BB%A4/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="Ming Liu">
+    <meta itemprop="description" content=", 艾窝窝爱生活">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="ioolm">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h2 id="代码版本管理"><a href="#代码版本管理" class="headerlink" title="代码版本管理"></a>代码版本管理</h2><ul>
+<li><h3 id="svn"><a href="#svn" class="headerlink" title="svn"></a>svn</h3><p>集中式代码版本管理工具，它有一个中心库。我们在修改之前需要先进行代码迁出，改完之后在迁出</p>
+</li>
+<li><h3 id="git"><a href="#git" class="headerlink" title="git"></a>git</h3><p>分布式代码版本管理工具。任何一个人的代码仓库都可以作为一个中心库再分享给别人。</p>
+<p>本地分三块内容</p>
+<ul>
+<li><h4 id="工作区"><a href="#工作区" class="headerlink" title="工作区"></a>工作区</h4><p>我们平时写代码改代码的地方</p>
+</li>
+<li><h4 id="缓存区"><a href="#缓存区" class="headerlink" title="缓存区"></a>缓存区</h4><p>git add 就会把修改的代码加入缓存区</p>
+</li>
+<li><h4 id="本地仓库"><a href="#本地仓库" class="headerlink" title="本地仓库"></a>本地仓库</h4><p>git commit 就会把代码提交到本地仓库</p>
+</li>
+</ul>
+<p>还有一个远程仓库</p>
+<p>​ git push 把本地代码推送到远程</p>
+<p>​ git pull 拉取远程仓库代码到本地，git fetch+git merge</p>
+<p>​ git fetch 只拉取，不合并</p>
+</li>
+</ul>
+<h2 id="git-常用命令"><a href="#git-常用命令" class="headerlink" title="git 常用命令"></a>git 常用命令</h2><h3 id="初始化一个仓库"><a href="#初始化一个仓库" class="headerlink" title="初始化一个仓库"></a>初始化一个仓库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
+
+<h3 id="or-克隆"><a href="#or-克隆" class="headerlink" title="or 克隆"></a>or 克隆</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> 远程仓库地址</span><br></pre></td></tr></table></figure>
+
+<h3 id="加入缓存区"><a href="#加入缓存区" class="headerlink" title="加入缓存区"></a>加入缓存区</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure>
+
+<h3 id="提交缓存区的代码到本地仓库"><a href="#提交缓存区的代码到本地仓库" class="headerlink" title="提交缓存区的代码到本地仓库"></a>提交缓存区的代码到本地仓库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m <span class="string">&#x27;日志&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="拉取远程最新代码"><a href="#拉取远程最新代码" class="headerlink" title="拉取远程最新代码"></a>拉取远程最新代码</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git pull</span><br><span class="line"><span class="comment"># 全名：</span></span><br><span class="line"><span class="comment"># git pull origin master:master</span></span><br><span class="line"><span class="comment"># git pull 远程仓库的名字 远程仓库的分支名:本地仓库的分支名</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="推送本地代码到远程"><a href="#推送本地代码到远程" class="headerlink" title="推送本地代码到远程"></a>推送本地代码到远程</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git push</span><br><span class="line"><span class="comment"># 全名：</span></span><br><span class="line"><span class="comment"># git push origin master:master</span></span><br><span class="line"><span class="comment"># git push 远程仓库的名字 本地分支名字:远程分支名字</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="更多命令"><a href="#更多命令" class="headerlink" title="更多命令"></a>更多命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b 分支名 # 创建一个新的分支并且切换过去</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch # 列出当前的所有分支</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch # 查看分支</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d 分支名 # 删除指定的分支</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge 分支名 # 合并分支，合并指定分支名的分支到当前分支</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log # 查看本地日志</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reflog # 查看所有的日志，包含已经回退和删除的</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset logid --hard # 回退代码到指定的位置</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rebase # 变基</span><br></pre></td></tr></table></figure>
+
+<h2 id="生成秘钥"><a href="#生成秘钥" class="headerlink" title="生成秘钥"></a>生成秘钥</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen</span><br></pre></td></tr></table></figure>
+
+      <div class="tags">
+          <a href="/tags/git/" rel="tag"><i class="ic i-tag"></i> git</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2020-09-30 09:11:53" itemprop="dateModified" datetime="2020-09-30T09:11:53+08:00">2020-09-30</time>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/wechatpay.png" alt="Ming Liu 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/alipay.png" alt="Ming Liu 支付宝">
+        <p>支付宝</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/paypal.png" alt="Ming Liu 贝宝">
+        <p>贝宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>Ming Liu <i class="ic i-at"><em>@</em></i>ioolm
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://ioolm.github.io/2019/08/26/git%E5%91%BD%E4%BB%A4/" title="git命令">https://ioolm.github.io/2019/08/26/git命令/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="nav">
+    <div class="item left">
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2019/09/20/%E9%A1%B5%E9%9D%A2%E7%BA%BF%E6%9D%A1%E8%BF%BD%E9%9A%8F%E9%BC%A0%E6%A0%87%E6%8C%87%E9%92%88/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;mw690&#x2F;c62bd99cly1gj7ve8d7pbj21hc0u0wla.jpg" title="页面线条追随鼠标指针">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> HTML</span>
+  <h3>页面线条追随鼠标指针</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments" data-id="2019/08/26/git命令/"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text">代码版本管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#svn"><span class="toc-number">1.1.</span> <span class="toc-text">svn</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git"><span class="toc-number">1.2.</span> <span class="toc-text">git</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B7%A5%E4%BD%9C%E5%8C%BA"><span class="toc-number">1.2.1.</span> <span class="toc-text">工作区</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%93%E5%AD%98%E5%8C%BA"><span class="toc-number">1.2.2.</span> <span class="toc-text">缓存区</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93"><span class="toc-number">1.2.3.</span> <span class="toc-text">本地仓库</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-number">2.</span> <span class="toc-text">git 常用命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%80%E4%B8%AA%E4%BB%93%E5%BA%93"><span class="toc-number">2.1.</span> <span class="toc-text">初始化一个仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#or-%E5%85%8B%E9%9A%86"><span class="toc-number">2.2.</span> <span class="toc-text">or 克隆</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A0%E5%85%A5%E7%BC%93%E5%AD%98%E5%8C%BA"><span class="toc-number">2.3.</span> <span class="toc-text">加入缓存区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%90%E4%BA%A4%E7%BC%93%E5%AD%98%E5%8C%BA%E7%9A%84%E4%BB%A3%E7%A0%81%E5%88%B0%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93"><span class="toc-number">2.4.</span> <span class="toc-text">提交缓存区的代码到本地仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%89%E5%8F%96%E8%BF%9C%E7%A8%8B%E6%9C%80%E6%96%B0%E4%BB%A3%E7%A0%81"><span class="toc-number">2.5.</span> <span class="toc-text">拉取远程最新代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A8%E9%80%81%E6%9C%AC%E5%9C%B0%E4%BB%A3%E7%A0%81%E5%88%B0%E8%BF%9C%E7%A8%8B"><span class="toc-number">2.6.</span> <span class="toc-text">推送本地代码到远程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E5%A4%9A%E5%91%BD%E4%BB%A4"><span class="toc-number">2.7.</span> <span class="toc-text">更多命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E7%A7%98%E9%92%A5"><span class="toc-number">3.</span> <span class="toc-text">生成秘钥</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li class="active"><a href="/2019/08/26/git%E5%91%BD%E4%BB%A4/" rel="bookmark" title="git命令">git命令</a></li><li><a href="/2019/09/20/%E9%A1%B5%E9%9D%A2%E7%BA%BF%E6%9D%A1%E8%BF%BD%E9%9A%8F%E9%BC%A0%E6%A0%87%E6%8C%87%E9%92%88/" rel="bookmark" title="页面线条追随鼠标指针">页面线条追随鼠标指针</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Ming Liu"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">Ming Liu</p>
+  <div class="description" itemprop="description">艾窝窝爱生活</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">5</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">3</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">5</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item about" data-url="aHR0cHM6Ly9hYm91dC5tZS9pb29sbQ==" title="https:&#x2F;&#x2F;about.me&#x2F;ioolm"><i class="ic i-address-card"></i></span>
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL2lvb2xt" title="https:&#x2F;&#x2F;github.com&#x2F;ioolm"><i class="ic i-github"></i></span>
+      <span class="exturl item zhihu" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;yourname"><i class="ic i-zhihu"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTEyNTY0MTkzMw==" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;125641933"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item email" data-url="bWFpbHRvOmlvb2xtQHZpcC5xcS5jb20=" title="mailto:ioolm@vip.qq.com"><i class="ic i-envelope"></i></span>
+      <span class="exturl item skype" data-url="c2t5cGU6aW9vbG1AcXEuY29t" title="skype:ioolm@qq.com"><i class="ic i-skype"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+        
+  <li class="item dropdown">
+    <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/HTML/" title="分类于 HTML">HTML</a>
+</div>
+
+    <span><a href="/2019/09/20/%E9%A1%B5%E9%9D%A2%E7%BA%BF%E6%9D%A1%E8%BF%BD%E9%9A%8F%E9%BC%A0%E6%A0%87%E6%8C%87%E9%92%88/" title="页面线条追随鼠标指针">页面线条追随鼠标指针</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/HTML/" title="分类于 HTML">HTML</a>
+</div>
+
+    <span><a href="/2019/08/26/git%E5%91%BD%E4%BB%A4/" title="git命令">git命令</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%94%9F%E6%B4%BB/" title="分类于 生活">生活</a>
+</div>
+
+    <span><a href="/2020/09/29/%E7%A7%8B%E5%A4%A9%E7%AC%AC%E4%B8%80%E6%9D%AF%E5%A5%B6%E8%8C%B6/" title="秋天第一杯奶茶">秋天第一杯奶茶</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%94%9F%E6%B4%BB/" title="分类于 生活">生活</a>
+</div>
+
+    <span><a href="/2019/11/09/%E6%B7%B1%E5%A4%9C%E4%B8%A4%E7%82%B9%E5%8D%8A/" title="深夜两点半">深夜两点半</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E8%AF%97%E8%AF%8D/" title="分类于 诗词">诗词</a>
+</div>
+
+    <span><a href="/2020/06/19/%E8%AF%97%E5%92%8C%E8%BF%9C%E6%96%B9/" title="诗和远方">诗和远方</a></span>
+  </li>
+
+  </ul>
+</div>
+<div id="rcomment">
+  <h2>最新评论</h2>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2020</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Ming Liu @ Mlog</span>
+  </div>
+  <div class="powered-by">
+    
+    All From MingLiu , @&nbsp;<a target="_blank" rel="noopener" href="https://ioolm.com">ioolm</a>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: 'https://ioolm.github.io/2019/08/26/git%E5%91%BD%E4%BB%A4/',
+    favicon: {
+      show: "艾窝窝 | 爱生活",
+      hide: "ioolm"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 ${query} ，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return uri === LOCAL.path;
+      }
+    ]
+  };
+</script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/velocity-animate@1.5.2/velocity.min.js,npm/velocity-animate@1.5.2/velocity.ui.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js,npm/leancloud-storage@3/dist/av-min.js"></script>
+
+<script src="/js/app.js?v=0.1.9"></script>
+
+
+
+
+</body>
+</html>
