@@ -8,7 +8,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#FFF">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/public/images/apple-touch-icon.png">
 
 <link rel="icon" type="image/ico" sizes="32x32" href="https://img.hxjbcdn.com/bcca610f-f980-45c8-8038-8b3db1526f7d.ico">
   <meta http-equiv="Cache-Control" content="no-transform">
@@ -21,8 +21,89 @@
 
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 
-<link rel="stylesheet" href="/css/app.css?v=0.1.9">
+<link rel="stylesheet" href="/public/css/app.css?v=0.1.9">
+<script>
+(function (window, document, undefined) {
+			var hearts = [];
 
+			window.requestAnimationFrame = (function () {
+				return window.requestAnimationFrame ||
+					window.webkitRequestAnimationFrame ||
+					window.mozRequestAnimationFrame ||
+					window.oRequestAnimationFrame ||
+					window.msRequestAnimationFrame ||
+					function (callback) {
+						setTimeout(callback, 1000 / 60);
+					}
+			})();
+
+			init();
+
+			function init() {
+				css(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: absolute;}.heart:after{top: -5px;}.heart:before{left: -5px;}");
+				attachEvent();
+				gameloop();
+			}
+
+			function gameloop() {
+				for (var i = 0; i < hearts.length; i++) {
+					if (hearts[i].alpha <= 0) {
+						document.body.removeChild(hearts[i].el);
+						hearts.splice(i, 1);
+						continue;
+					}
+
+					hearts[i].y--;
+					hearts[i].scale += 0.004;
+					hearts[i].alpha -= 0.013;
+					hearts[i].el.style.cssText = "left:" + hearts[i].x + "px;top:" + hearts[i].y + "px;opacity:" + hearts[i].alpha + ";transform:scale(" + hearts[i].scale + "," + hearts[i].scale + ") rotate(45deg);background:" + hearts[i].color;
+				}
+
+				requestAnimationFrame(gameloop);
+			}
+
+			function attachEvent() {
+				var old = typeof window.onclick === "function" && window.onclick;
+				window.onclick = function (event) {
+					old && old();
+					createHeart(event);
+				}
+			}
+
+			function createHeart(event) {
+				var d = document.createElement("div");
+				d.className = "heart";
+				hearts.push({
+					el: d,
+					x: event.clientX - 5,
+					y: event.clientY - 5,
+					scale: 1,
+					alpha: 1,
+					color: randomColor()
+				});
+
+				document.body.appendChild(d);
+			}
+
+			function css(css) {
+				var style = document.createElement("style");
+				style.type = "text/css";
+				try {
+					style.appendChild(document.createTextNode(css));
+				}
+				catch (ex) {
+					style.styleSheet.cssText = css;
+				}
+
+				document.getElementsByTagName('head')[0].appendChild(style);
+			}
+
+			function randomColor() {
+				return "rgb(" + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + ")";
+			}
+
+		})(window, document);
+</script>
   
   <meta name="keywords" content="git" />
 
@@ -90,7 +171,7 @@ Mlog = ioolm</title>
       </div>
     </div>
     <ul class="menu">
-      <li class="item title"><a href="/" rel="start">Mlog</a></li>
+      <li class="item title"><a href="/public/" rel="start">Mlog</a></li>
     </ul>
     <ul class="right">
       <li class="item theme">
@@ -106,12 +187,12 @@ Mlog = ioolm</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/c62bd99cly1gj8e7gzypjj21hc0u0aq9.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/c62bd99cly1gj7vdjcbtlj21hc0u0af8.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/c62bd99cly1gj7vdzw0jvj21hc0u0dn0.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/c62bd99cly1gj8e8ath6uj21hc0u04eu.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/c62bd99cly1gj8e83gdw3j21hc0u04qp.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/c62bd99cly1gj7vd76mm3j21910u0tpc.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/c62bd99cly1gj8e70m449j21hc0u07qb.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/c62bd99cly1gj8e5xdlkmj21hc0u0q9n.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/c62bd99cly1gj8e5trbbsj21hc0u0ne9.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/c62bd99cly1gj8e8ath6uj21hc0u04eu.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/c62bd99cly1gj8e6w6kndj21hc0u0wmi.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/c62bd99cly1gj8e7dgyegj21hc0u0toj.jpg"></li>
         </ul>
       </div>
     </header>
@@ -136,8 +217,8 @@ Mlog = ioolm</title>
     
 <div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
 <i class="ic i-home"></i>
-<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
-<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/HTML/" itemprop="item" rel="index" title="分类于 HTML"><span itemprop="name">HTML</span></a>
+<span><a href="/public/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/public/categories/HTML/" itemprop="item" rel="index" title="分类于 HTML"><span itemprop="name">HTML</span></a>
 <meta itemprop="position" content="1" /></span>
 </div>
 
@@ -145,7 +226,7 @@ Mlog = ioolm</title>
   <link itemprop="mainEntityOfPage" href="https://ioolm.com/public/2019/08/26/git%E5%91%BD%E4%BB%A4/">
 
   <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="image" content="/public/images/avatar.jpg">
     <meta itemprop="name" content="Ming Liu">
     <meta itemprop="description" content=", 艾窝窝爱生活">
   </span>
@@ -209,7 +290,7 @@ Mlog = ioolm</title>
 <h2 id="生成秘钥"><a href="#生成秘钥" class="headerlink" title="生成秘钥"></a>生成秘钥</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen</span><br></pre></td></tr></table></figure>
 
       <div class="tags">
-          <a href="/tags/git/" rel="tag"><i class="ic i-tag"></i> git</a>
+          <a href="/public/tags/git/" rel="tag"><i class="ic i-tag"></i> git</a>
       </div>
   </div>
 
@@ -232,17 +313,17 @@ Mlog = ioolm</title>
   <div id="qr">
       
       <div>
-        <img data-src="/images/wechatpay.png" alt="Ming Liu 微信支付">
+        <img data-src="/public/images/wechatpay.png" alt="Ming Liu 微信支付">
         <p>微信支付</p>
       </div>
       
       <div>
-        <img data-src="/images/alipay.png" alt="Ming Liu 支付宝">
+        <img data-src="/public/images/alipay.png" alt="Ming Liu 支付宝">
         <p>支付宝</p>
       </div>
       
       <div>
-        <img data-src="/images/paypal.png" alt="Ming Liu 贝宝">
+        <img data-src="/public/images/paypal.png" alt="Ming Liu 贝宝">
         <p>贝宝</p>
       </div>
   </div>
@@ -278,7 +359,7 @@ Mlog = ioolm</title>
     <div class="item right">
       
 
-  <a href="/2019/09/20/%E9%A1%B5%E9%9D%A2%E7%BA%BF%E6%9D%A1%E8%BF%BD%E9%9A%8F%E9%BC%A0%E6%A0%87%E6%8C%87%E9%92%88/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;c62bd99cly1gj8e579712j21hc0u0nf0.jpg" title="页面线条追随鼠标指针">
+  <a href="/public/2019/09/20/%E9%A1%B5%E9%9D%A2%E7%BA%BF%E6%9D%A1%E8%BF%BD%E9%9A%8F%E9%BC%A0%E6%A0%87%E6%8C%87%E9%92%88/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;c62bd99cly1gj7vegvecjj218y0u01bs.jpg" title="页面线条追随鼠标指针">
   <span class="type">下一篇</span>
   <span class="category"><i class="ic i-flag"></i> HTML</span>
   <h3>页面线条追随鼠标指针</h3>
@@ -304,32 +385,32 @@ Mlog = ioolm</title>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
-          <li class="active"><a href="/2019/08/26/git%E5%91%BD%E4%BB%A4/" rel="bookmark" title="git命令">git命令</a></li><li><a href="/2020/10/04/%E8%AE%B0coding%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E4%B8%8D%E4%BC%9A%E6%9B%B4%E6%96%B0/" rel="bookmark" title="记coding自定义域名不会更新">记coding自定义域名不会更新</a></li><li><a href="/2020/10/03/%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%E5%BF%83%E5%BE%97/" rel="bookmark" title="部署博客心得">部署博客心得</a></li><li><a href="/2019/09/20/%E9%A1%B5%E9%9D%A2%E7%BA%BF%E6%9D%A1%E8%BF%BD%E9%9A%8F%E9%BC%A0%E6%A0%87%E6%8C%87%E9%92%88/" rel="bookmark" title="页面线条追随鼠标指针">页面线条追随鼠标指针</a></li>
+          <li class="active"><a href="/public/2019/08/26/git%E5%91%BD%E4%BB%A4/" rel="bookmark" title="git命令">git命令</a></li><li><a href="/public/2020/10/04/%E8%AE%B0coding%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E4%B8%8D%E4%BC%9A%E6%9B%B4%E6%96%B0/" rel="bookmark" title="记coding自定义域名不会更新">记coding自定义域名不会更新</a></li><li><a href="/public/2020/10/03/%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%E5%BF%83%E5%BE%97/" rel="bookmark" title="部署博客心得">部署博客心得</a></li><li><a href="/public/2019/09/20/%E9%A1%B5%E9%9D%A2%E7%BA%BF%E6%9D%A1%E8%BF%BD%E9%9A%8F%E9%BC%A0%E6%A0%87%E6%8C%87%E9%92%88/" rel="bookmark" title="页面线条追随鼠标指针">页面线条追随鼠标指针</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="站点概览">
         <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <img class="image" itemprop="image" alt="Ming Liu"
-      data-src="/images/avatar.jpg">
+      data-src="/public/images/avatar.jpg">
   <p class="name" itemprop="name">Ming Liu</p>
   <div class="description" itemprop="description">艾窝窝爱生活</div>
 </div>
 
 <nav class="state">
     <div class="item posts">
-      <a href="/archives/">
+      <a href="/public/archives/">
         <span class="count">10</span>
         <span class="name">文章</span>
       </a>
     </div>
     <div class="item categories">
-      <a href="/categories/">
+      <a href="/public/categories/">
         <span class="count">4</span>
         <span class="name">分类</span>
       </a>
     </div>
     <div class="item tags">
-      <a href="/tags/">
+      <a href="/public/tags/">
         <span class="count">9</span>
         <span class="name">标签</span>
       </a>
@@ -349,7 +430,7 @@ Mlog = ioolm</title>
   
     
   <li class="item">
-    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+    <a href="/public/" rel="section"><i class="ic i-home"></i>首页</a>
   </li>
 
         
@@ -359,17 +440,17 @@ Mlog = ioolm</title>
 
         
   <li class="item">
-    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+    <a href="/public/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
   </li>
 
         
   <li class="item">
-    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+    <a href="/public/categories/" rel="section"><i class="ic i-th"></i>分类</a>
   </li>
 
         
   <li class="item">
-    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+    <a href="/public/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
   </li>
 
   </ul>
@@ -407,100 +488,100 @@ Mlog = ioolm</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/%E7%94%9F%E6%B4%BB/" title="分类于 生活">生活</a>
+<a href="/public/categories/%E7%94%9F%E6%B4%BB/" title="分类于 生活">生活</a>
 </div>
 
-    <span><a href="/2020/09/29/%E7%A7%8B%E5%A4%A9%E7%AC%AC%E4%B8%80%E6%9D%AF%E5%A5%B6%E8%8C%B6/" title="秋天第一杯奶茶">秋天第一杯奶茶</a></span>
+    <span><a href="/public/2020/10/01/%E7%AD%89%E5%A5%B9%E7%9D%A1%E7%9D%80%E4%BA%86%E5%AF%B9%E5%A5%B9%E8%AF%B4/" title="等她睡着了对她说">等她睡着了对她说</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="分类于 服务器">服务器</a>
+<a href="/public/categories/%E8%AF%97%E8%AF%8D/" title="分类于 诗词">诗词</a>
 </div>
 
-    <span><a href="/2020/09/30/%E7%94%B3%E8%AF%B7%E5%85%8D%E8%B4%B9SSL%E8%AF%81%E4%B9%A6/" title="申请免费SSL证书">申请免费SSL证书</a></span>
+    <span><a href="/public/2020/06/19/%E8%AF%97%E5%92%8C%E8%BF%9C%E6%96%B9/" title="诗和远方">诗和远方</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/%E7%94%9F%E6%B4%BB/" title="分类于 生活">生活</a>
+<a href="/public/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="分类于 服务器">服务器</a>
 </div>
 
-    <span><a href="/2020/10/01/%E7%AD%89%E5%A5%B9%E7%9D%A1%E7%9D%80%E4%BA%86%E5%AF%B9%E5%A5%B9%E8%AF%B4/" title="等她睡着了对她说">等她睡着了对她说</a></span>
+    <span><a href="/public/2020/09/30/%E7%94%B3%E8%AF%B7%E5%85%8D%E8%B4%B9SSL%E8%AF%81%E4%B9%A6/" title="申请免费SSL证书">申请免费SSL证书</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/%E7%94%9F%E6%B4%BB/" title="分类于 生活">生活</a>
+<a href="/public/categories/HTML/" title="分类于 HTML">HTML</a>
 </div>
 
-    <span><a href="/2019/11/09/%E6%B7%B1%E5%A4%9C%E4%B8%A4%E7%82%B9%E5%8D%8A/" title="深夜两点半">深夜两点半</a></span>
+    <span><a href="/public/2020/10/04/%E8%AE%B0coding%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E4%B8%8D%E4%BC%9A%E6%9B%B4%E6%96%B0/" title="记coding自定义域名不会更新">记coding自定义域名不会更新</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/%E8%AF%97%E8%AF%8D/" title="分类于 诗词">诗词</a>
+<a href="/public/categories/%E7%94%9F%E6%B4%BB/" title="分类于 生活">生活</a>
 </div>
 
-    <span><a href="/2020/09/30/%E8%87%B4%E6%A9%A1%E6%A0%91/" title="致橡树">致橡树</a></span>
+    <span><a href="/public/2019/11/09/%E6%B7%B1%E5%A4%9C%E4%B8%A4%E7%82%B9%E5%8D%8A/" title="深夜两点半">深夜两点半</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/HTML/" title="分类于 HTML">HTML</a>
+<a href="/public/categories/%E7%94%9F%E6%B4%BB/" title="分类于 生活">生活</a>
 </div>
 
-    <span><a href="/2019/09/20/%E9%A1%B5%E9%9D%A2%E7%BA%BF%E6%9D%A1%E8%BF%BD%E9%9A%8F%E9%BC%A0%E6%A0%87%E6%8C%87%E9%92%88/" title="页面线条追随鼠标指针">页面线条追随鼠标指针</a></span>
+    <span><a href="/public/2020/09/29/%E7%A7%8B%E5%A4%A9%E7%AC%AC%E4%B8%80%E6%9D%AF%E5%A5%B6%E8%8C%B6/" title="秋天第一杯奶茶">秋天第一杯奶茶</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/HTML/" title="分类于 HTML">HTML</a>
+<a href="/public/categories/HTML/" title="分类于 HTML">HTML</a>
 </div>
 
-    <span><a href="/2020/10/03/%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%E5%BF%83%E5%BE%97/" title="部署博客心得">部署博客心得</a></span>
+    <span><a href="/public/2019/09/20/%E9%A1%B5%E9%9D%A2%E7%BA%BF%E6%9D%A1%E8%BF%BD%E9%9A%8F%E9%BC%A0%E6%A0%87%E6%8C%87%E9%92%88/" title="页面线条追随鼠标指针">页面线条追随鼠标指针</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/HTML/" title="分类于 HTML">HTML</a>
+<a href="/public/categories/%E8%AF%97%E8%AF%8D/" title="分类于 诗词">诗词</a>
 </div>
 
-    <span><a href="/2019/08/26/git%E5%91%BD%E4%BB%A4/" title="git命令">git命令</a></span>
+    <span><a href="/public/2020/09/30/%E8%87%B4%E6%A9%A1%E6%A0%91/" title="致橡树">致橡树</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/HTML/" title="分类于 HTML">HTML</a>
+<a href="/public/categories/HTML/" title="分类于 HTML">HTML</a>
 </div>
 
-    <span><a href="/2020/10/04/%E8%AE%B0coding%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E4%B8%8D%E4%BC%9A%E6%9B%B4%E6%96%B0/" title="记coding自定义域名不会更新">记coding自定义域名不会更新</a></span>
+    <span><a href="/public/2019/08/26/git%E5%91%BD%E4%BB%A4/" title="git命令">git命令</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/%E8%AF%97%E8%AF%8D/" title="分类于 诗词">诗词</a>
+<a href="/public/categories/HTML/" title="分类于 HTML">HTML</a>
 </div>
 
-    <span><a href="/2020/06/19/%E8%AF%97%E5%92%8C%E8%BF%9C%E6%96%B9/" title="诗和远方">诗和远方</a></span>
+    <span><a href="/public/2020/10/03/%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%E5%BF%83%E5%BE%97/" title="部署博客心得">部署博客心得</a></span>
   </li>
 
   </ul>
@@ -555,7 +636,7 @@ Mlog = ioolm</title>
 
 <script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/velocity-animate@1.5.2/velocity.min.js,npm/velocity-animate@1.5.2/velocity.ui.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js,npm/leancloud-storage@3/dist/av-min.js"></script>
 
-<script src="/js/app.js?v=0.1.9"></script>
+<script src="/public/js/app.js?v=0.1.9"></script>
 
 
 
