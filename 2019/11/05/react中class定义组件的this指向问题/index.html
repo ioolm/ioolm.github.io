@@ -105,19 +105,19 @@
 		})(window, document);
 </script>
   
-  <meta name="keywords" content="博客" />
+  <meta name="keywords" content="React" />
 
 
 
 <meta name="description" content="艾窝窝爱生活" >
 
 
-<link rel="canonical" href="https://ioolm.com/public/2020/10/04/%E8%AE%B0coding%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E4%B8%8D%E4%BC%9A%E6%9B%B4%E6%96%B0/">
+<link rel="canonical" href="https://ioolm.com/public/2019/11/05/react%E4%B8%ADclass%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6%E7%9A%84this%E6%8C%87%E5%90%91%E9%97%AE%E9%A2%98/">
 
 
 
   <title>
-记coding自定义域名不会更新 - HTML |
+react中class定义组件的this指向问题 - HTML |
 Mlog = ioolm</title>
 <meta name="generator" content="Hexo 5.2.0"></head>
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -145,16 +145,16 @@ Mlog = ioolm</title>
         <div id="brand">
           <div class="pjax">
           
-  <h1 itemprop="name headline">记coding自定义域名不会更新
+  <h1 itemprop="name headline">react中class定义组件的this指向问题
   </h1>
   
 <div class="meta">
-  <span class="item" title="创建时间：2020-10-04 12:51:24">
+  <span class="item" title="创建时间：2019-11-05 19:34:34">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
     <span class="text">发表于</span>
-    <time itemprop="dateCreated datePublished" datetime="2020-10-04T12:51:24+08:00">2020-10-04</time>
+    <time itemprop="dateCreated datePublished" datetime="2019-11-05T19:34:34+08:00">2019-11-05</time>
   </span>
 </div>
 
@@ -187,12 +187,12 @@ Mlog = ioolm</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/c62bd99cly1gj8e6izu9sj21hc0u012z.jpg"></li>
           <li class="item" data-background-image="https://tva3.sinaimg.cn/large/c62bd99cly1gj7vd76mm3j21910u0tpc.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/c62bd99cly1gj7vdjcbtlj21hc0u0af8.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/c62bd99cly1gj8e6nm9sdj21hc0u012e.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/c62bd99cly1gj8e8lh9euj21hc0u0k5b.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/c62bd99cly1gj8e579712j21hc0u0nf0.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/c62bd99cly1gj8e6lmpaxj21hc0u0dsk.jpg"></li>
           <li class="item" data-background-image="https://tva3.sinaimg.cn/large/c62bd99cly1gj8e7gzypjj21hc0u0aq9.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/c62bd99cly1gj8e6uhiyej21hc0u04dz.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/c62bd99cly1gj8e6nm9sdj21hc0u012e.jpg"></li>
         </ul>
       </div>
     </header>
@@ -223,7 +223,7 @@ Mlog = ioolm</title>
 </div>
 
     <article itemscope itemtype="http://schema.org/Article" class="post block" lang="en">
-  <link itemprop="mainEntityOfPage" href="https://ioolm.com/public/2020/10/04/%E8%AE%B0coding%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E4%B8%8D%E4%BC%9A%E6%9B%B4%E6%96%B0/">
+  <link itemprop="mainEntityOfPage" href="https://ioolm.com/public/2019/11/05/react%E4%B8%ADclass%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6%E7%9A%84this%E6%8C%87%E5%90%91%E9%97%AE%E9%A2%98/">
 
   <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="image" content="/public/images/avatar.jpg">
@@ -238,10 +238,48 @@ Mlog = ioolm</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="记coding自定义域名不会更新"><a href="#记coding自定义域名不会更新" class="headerlink" title="记coding自定义域名不会更新"></a>记coding自定义域名不会更新</h1><p>coding部署完给的外链地址可以更新最新文章，但是自定义的域名并不会更新最新文章，待解决</p>
+    <p>改变this指向的方法：call、bind、apply</p>
+<ul>
+<li>call和apply的区别：</li>
+</ul>
+<p>call和apply既改变this指向也会调用该方法</p>
+<p>bind只该百年this指向，不调用方法</p>
+<ul>
+<li>call和apply的区别：传参不同</li>
+</ul>
+<p>call传参一个一个的，apply用数组的形式</p>
+<p>this指向不改变的时候为undefined的原因：js的运行机制问题，在react初始化的时候render方法执行，render方法第一次执行的时候，this指向当前组件，在下一次点击按钮的时候，在全局环境中调用click Handle方法，this指向window对象，text/bael采用js中的严格模式，在严格模式下，this是undefined，在调用clickHandle方法的时候this已经脱离了当前环境，解决方法：在初始化的时候，先做一次this指向的绑定。  这种绑定this指向的方法是官方推荐写法，组件初始化的时候只做一次绑定</p>
+<p>绑定this 方法：</p>
+<ol>
+<li><p>this.clickHandle = this.clickHandle.bind(this)//改变this指向—最官方</p>
+</li>
+<li><pre><code>&lt;button onClick=&#123;this.clickHandle.bind(this)&#125;&gt;&#123;this.state.count&#125;&lt;button&gt;
+直接在render的时候进行this绑定，每一次数据或者属性改变之后this指向绑定的操作都会执行
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">3. &#96;&#96;&#96;</span><br><span class="line">   return (</span><br><span class="line">   	&lt;button onClick &#x3D; &#123;() &#x3D;&gt; this.clickHandle()&#125;&gt;</span><br><span class="line">   		&#123;this.state.count&#125;</span><br><span class="line">   	&lt;&#x2F;button&gt;</span><br><span class="line">   )---------------最常用</span><br></pre></td></tr></table></figure>
+
+
+</code></pre>
+</li>
+</ol>
+<p>class组件中采用setState改变组件中的状态数据，this.setState()传两个参数，setState是异步的可以设置第二个参数，表示成功之后的回调函数</p>
+<h3 id="class定义的组件和function定义的组件的区别"><a href="#class定义的组件和function定义的组件的区别" class="headerlink" title="class定义的组件和function定义的组件的区别"></a>class定义的组件和function定义的组件的区别</h3><ol>
+<li><p>在16.8之前react中function定义的组件不能拥有局部状态和生命周期，是一种无状态组件</p>
+</li>
+<li><p>16.8之后的react中新增了hooks可以在function定义的组件中模拟局部状态和生命周期</p>
+</li>
+<li><p>function定义的组件没有this指向问题，代码可读性更强</p>
+</li>
+<li><p>class定义的组件写法上更接近于强类型语言的语法</p>
+</li>
+<li><p>class定义的组件中有很多生命周期钩子函数</p>
+</li>
+<li><p>function定义的组件通过useEffect副作用来模拟处理生命周期</p>
+</li>
+</ol>
+<p>组件挂载完成componentDidMount主要用来调接口取数据</p>
 
       <div class="tags">
-          <a href="/public/tags/%E5%8D%9A%E5%AE%A2/" rel="tag"><i class="ic i-tag"></i> 博客</a>
+          <a href="/public/tags/React/" rel="tag"><i class="ic i-tag"></i> React</a>
       </div>
   </div>
 
@@ -253,7 +291,7 @@ Mlog = ioolm</title>
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新于</span>
-    <time title="修改时间：2020-10-04 12:53:17" itemprop="dateModified" datetime="2020-10-04T12:53:17+08:00">2020-10-04</time>
+    <time title="修改时间：2020-10-10 19:36:22" itemprop="dateModified" datetime="2020-10-10T19:36:22+08:00">2020-10-10</time>
   </span>
 </div>
 
@@ -289,7 +327,7 @@ Mlog = ioolm</title>
   </li>
   <li class="link">
     <strong>本文链接：</strong>
-    <a href="https://ioolm.com/public/2020/10/04/%E8%AE%B0coding%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E4%B8%8D%E4%BC%9A%E6%9B%B4%E6%96%B0/" title="记coding自定义域名不会更新">https://ioolm.com/public/2020/10/04/记coding自定义域名不会更新/</a>
+    <a href="https://ioolm.com/public/2019/11/05/react%E4%B8%ADclass%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6%E7%9A%84this%E6%8C%87%E5%90%91%E9%97%AE%E9%A2%98/" title="react中class定义组件的this指向问题">https://ioolm.com/public/2019/11/05/react中class定义组件的this指向问题/</a>
   </li>
   <li class="license">
     <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
@@ -308,19 +346,27 @@ Mlog = ioolm</title>
     <div class="item left">
       
 
-  <a href="/public/2020/10/03/%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%E5%BF%83%E5%BE%97/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;c62bd99cly1gj8e87nmeuj21hc0u01f2.jpg" title="部署博客心得">
+  <a href="/public/2019/09/20/%E9%A1%B5%E9%9D%A2%E7%BA%BF%E6%9D%A1%E8%BF%BD%E9%9A%8F%E9%BC%A0%E6%A0%87%E6%8C%87%E9%92%88/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;c62bd99cly1gj8e63vjjmj21hc0u0hdp.jpg" title="页面线条追随鼠标指针">
   <span class="type">上一篇</span>
   <span class="category"><i class="ic i-flag"></i> HTML</span>
-  <h3>部署博客心得</h3>
+  <h3>页面线条追随鼠标指针</h3>
   </a>
 
     </div>
     <div class="item right">
+      
+
+  <a href="/public/2019/11/09/%E6%B7%B1%E5%A4%9C%E4%B8%A4%E7%82%B9%E5%8D%8A/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;c62bd99cly1gj8e7l29nkj21hc0u0qeh.jpg" title="深夜两点半">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 生活</span>
+  <h3>深夜两点半</h3>
+  </a>
+
     </div>
 </div>
 
   
-  <div class="wrap" id="comments" data-id="2020/10/04/记coding自定义域名不会更新/"></div>
+  <div class="wrap" id="comments" data-id="2019/11/05/react中class定义组件的this指向问题/"></div>
 
 
         </div>
@@ -332,11 +378,11 @@ Mlog = ioolm</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%B0coding%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E4%B8%8D%E4%BC%9A%E6%9B%B4%E6%96%B0"><span class="toc-number">1.</span> <span class="toc-text">记coding自定义域名不会更新</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#class%E5%AE%9A%E4%B9%89%E7%9A%84%E7%BB%84%E4%BB%B6%E5%92%8Cfunction%E5%AE%9A%E4%B9%89%E7%9A%84%E7%BB%84%E4%BB%B6%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.</span> <span class="toc-text">class定义的组件和function定义的组件的区别</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
-          <li><a href="/public/2019/08/26/git%E5%91%BD%E4%BB%A4/" rel="bookmark" title="git命令">git命令</a></li><li><a href="/public/2019/11/05/react%E4%B8%ADclass%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6%E7%9A%84this%E6%8C%87%E5%90%91%E9%97%AE%E9%A2%98/" rel="bookmark" title="react中class定义组件的this指向问题">react中class定义组件的this指向问题</a></li><li class="active"><a href="/public/2020/10/04/%E8%AE%B0coding%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E4%B8%8D%E4%BC%9A%E6%9B%B4%E6%96%B0/" rel="bookmark" title="记coding自定义域名不会更新">记coding自定义域名不会更新</a></li><li><a href="/public/2020/10/03/%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%E5%BF%83%E5%BE%97/" rel="bookmark" title="部署博客心得">部署博客心得</a></li><li><a href="/public/2019/09/20/%E9%A1%B5%E9%9D%A2%E7%BA%BF%E6%9D%A1%E8%BF%BD%E9%9A%8F%E9%BC%A0%E6%A0%87%E6%8C%87%E9%92%88/" rel="bookmark" title="页面线条追随鼠标指针">页面线条追随鼠标指针</a></li>
+          <li><a href="/public/2019/08/26/git%E5%91%BD%E4%BB%A4/" rel="bookmark" title="git命令">git命令</a></li><li class="active"><a href="/public/2019/11/05/react%E4%B8%ADclass%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6%E7%9A%84this%E6%8C%87%E5%90%91%E9%97%AE%E9%A2%98/" rel="bookmark" title="react中class定义组件的this指向问题">react中class定义组件的this指向问题</a></li><li><a href="/public/2020/10/04/%E8%AE%B0coding%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E4%B8%8D%E4%BC%9A%E6%9B%B4%E6%96%B0/" rel="bookmark" title="记coding自定义域名不会更新">记coding自定义域名不会更新</a></li><li><a href="/public/2020/10/03/%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%E5%BF%83%E5%BE%97/" rel="bookmark" title="部署博客心得">部署博客心得</a></li><li><a href="/public/2019/09/20/%E9%A1%B5%E9%9D%A2%E7%BA%BF%E6%9D%A1%E8%BF%BD%E9%9A%8F%E9%BC%A0%E6%A0%87%E6%8C%87%E9%92%88/" rel="bookmark" title="页面线条追随鼠标指针">页面线条追随鼠标指针</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="站点概览">
@@ -414,10 +460,12 @@ Mlog = ioolm</title>
 
   <ul id="quick">
     <li class="prev pjax">
+        <a href="/public/2019/09/20/%E9%A1%B5%E9%9D%A2%E7%BA%BF%E6%9D%A1%E8%BF%BD%E9%9A%8F%E9%BC%A0%E6%A0%87%E6%8C%87%E9%92%88/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
+        <a href="/public/2019/11/09/%E6%B7%B1%E5%A4%9C%E4%B8%A4%E7%82%B9%E5%8D%8A/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -439,10 +487,70 @@ Mlog = ioolm</title>
   <li class="item">
     
 <div class="breadcrumb">
+<a href="/public/categories/%E7%94%9F%E6%B4%BB/" title="分类于 生活">生活</a>
+</div>
+
+    <span><a href="/public/2020/10/01/%E7%AD%89%E5%A5%B9%E7%9D%A1%E7%9D%80%E4%BA%86%E5%AF%B9%E5%A5%B9%E8%AF%B4/" title="等她睡着了对她说">等她睡着了对她说</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/public/categories/HTML/" title="分类于 HTML">HTML</a>
+</div>
+
+    <span><a href="/public/2020/10/03/%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%E5%BF%83%E5%BE%97/" title="部署博客心得">部署博客心得</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/public/categories/%E8%AF%97%E8%AF%8D/" title="分类于 诗词">诗词</a>
+</div>
+
+    <span><a href="/public/2020/09/30/%E8%87%B4%E6%A9%A1%E6%A0%91/" title="致橡树">致橡树</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/public/categories/HTML/" title="分类于 HTML">HTML</a>
+</div>
+
+    <span><a href="/public/2019/11/05/react%E4%B8%ADclass%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6%E7%9A%84this%E6%8C%87%E5%90%91%E9%97%AE%E9%A2%98/" title="react中class定义组件的this指向问题">react中class定义组件的this指向问题</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/public/categories/%E7%94%9F%E6%B4%BB/" title="分类于 生活">生活</a>
+</div>
+
+    <span><a href="/public/2020/09/29/%E7%A7%8B%E5%A4%A9%E7%AC%AC%E4%B8%80%E6%9D%AF%E5%A5%B6%E8%8C%B6/" title="秋天第一杯奶茶">秋天第一杯奶茶</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
 <a href="/public/categories/HTML/" title="分类于 HTML">HTML</a>
 </div>
 
     <span><a href="/public/2019/09/20/%E9%A1%B5%E9%9D%A2%E7%BA%BF%E6%9D%A1%E8%BF%BD%E9%9A%8F%E9%BC%A0%E6%A0%87%E6%8C%87%E9%92%88/" title="页面线条追随鼠标指针">页面线条追随鼠标指针</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/public/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="分类于 服务器">服务器</a>
+</div>
+
+    <span><a href="/public/2020/09/30/%E7%94%B3%E8%AF%B7%E5%85%8D%E8%B4%B9SSL%E8%AF%81%E4%B9%A6/" title="申请免费SSL证书">申请免费SSL证书</a></span>
   </li>
 
       
@@ -462,7 +570,7 @@ Mlog = ioolm</title>
 <a href="/public/categories/HTML/" title="分类于 HTML">HTML</a>
 </div>
 
-    <span><a href="/public/2020/10/03/%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%E5%BF%83%E5%BE%97/" title="部署博客心得">部署博客心得</a></span>
+    <span><a href="/public/2020/10/04/%E8%AE%B0coding%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E4%B8%8D%E4%BC%9A%E6%9B%B4%E6%96%B0/" title="记coding自定义域名不会更新">记coding自定义域名不会更新</a></span>
   </li>
 
       
@@ -473,66 +581,6 @@ Mlog = ioolm</title>
 </div>
 
     <span><a href="/public/2019/08/26/git%E5%91%BD%E4%BB%A4/" title="git命令">git命令</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/public/categories/%E7%94%9F%E6%B4%BB/" title="分类于 生活">生活</a>
-</div>
-
-    <span><a href="/public/2020/10/01/%E7%AD%89%E5%A5%B9%E7%9D%A1%E7%9D%80%E4%BA%86%E5%AF%B9%E5%A5%B9%E8%AF%B4/" title="等她睡着了对她说">等她睡着了对她说</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/public/categories/%E7%94%9F%E6%B4%BB/" title="分类于 生活">生活</a>
-</div>
-
-    <span><a href="/public/2020/09/29/%E7%A7%8B%E5%A4%A9%E7%AC%AC%E4%B8%80%E6%9D%AF%E5%A5%B6%E8%8C%B6/" title="秋天第一杯奶茶">秋天第一杯奶茶</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/public/categories/%E8%AF%97%E8%AF%8D/" title="分类于 诗词">诗词</a>
-</div>
-
-    <span><a href="/public/2020/06/19/%E8%AF%97%E5%92%8C%E8%BF%9C%E6%96%B9/" title="诗和远方">诗和远方</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/public/categories/HTML/" title="分类于 HTML">HTML</a>
-</div>
-
-    <span><a href="/public/2020/10/04/%E8%AE%B0coding%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E4%B8%8D%E4%BC%9A%E6%9B%B4%E6%96%B0/" title="记coding自定义域名不会更新">记coding自定义域名不会更新</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/public/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="分类于 服务器">服务器</a>
-</div>
-
-    <span><a href="/public/2020/09/30/%E7%94%B3%E8%AF%B7%E5%85%8D%E8%B4%B9SSL%E8%AF%81%E4%B9%A6/" title="申请免费SSL证书">申请免费SSL证书</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/public/categories/HTML/" title="分类于 HTML">HTML</a>
-</div>
-
-    <span><a href="/public/2019/11/05/react%E4%B8%ADclass%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6%E7%9A%84this%E6%8C%87%E5%90%91%E9%97%AE%E9%A2%98/" title="react中class定义组件的this指向问题">react中class定义组件的this指向问题</a></span>
   </li>
 
   </ul>
@@ -563,7 +611,7 @@ Mlog = ioolm</title>
   </div>
 <script data-config type="text/javascript">
   var LOCAL = {
-    path: 'https://ioolm.com/public/2020/10/04/%E8%AE%B0coding%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E4%B8%8D%E4%BC%9A%E6%9B%B4%E6%96%B0/',
+    path: 'https://ioolm.com/public/2019/11/05/react%E4%B8%ADclass%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6%E7%9A%84this%E6%8C%87%E5%90%91%E9%97%AE%E9%A2%98/',
     favicon: {
       show: "艾窝窝 | 爱生活",
       hide: "ioolm"
